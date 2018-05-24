@@ -6,7 +6,8 @@ import { fetchData } from '../actions/items';
 class ItemList extends Component {
     
     componentDidMount() {
-        this.props.fetchData('https://5ab9ea97d9ac5c001434ecd0.mockapi.io/items');
+        this.props.fetchData('https://healthnotes.herokuapp.com/1/getnotes/9177043031');
+
     }
 
     render() {
@@ -15,12 +16,11 @@ class ItemList extends Component {
 
         <div>
             <ul>
-                {this.props.items.map((item) => (
-                    <li key={item.id}>
-                        <b>{item.name}, {item.age}</b>
-                        {/*{item.cars.map((car) => <span key={car.id}><br /> {car.name} </span>)}*/}
-                    </li>
-                ))}
+                {this.props.items.notes ? 
+                        Object.keys(this.props.items.notes).map((id) =>
+                            <p>{this.props.items.notes[id][0]["name"]} – {this.props.items.notes[id][1]["note"]} </p>
+                        )
+                : null}
             </ul>
         </div>
         );

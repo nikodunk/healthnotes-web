@@ -16,8 +16,11 @@ class LoginComponent extends Component {
 
     check(e){
       e.preventDefault();
-      this.props.sendPIN(8523, 9177043031);
-      
+      this.props.sendPIN(this.props.pin, this.props.phone)
+        .then((res) => {
+          if (res === true){ console.log('password correct'); this.props.handleSubmit(e) }
+          else{console.log('password wrong')}
+        })
     }
 
     render() {
@@ -26,17 +29,21 @@ class LoginComponent extends Component {
 
         <div>
             <form>
-                <input
-                  autoFocus
-                  type="text"
-                  onChange={this.props.handleUsernameChange}
-                  value={this.props.phone}
-                />
-                <input
-                  type="text"
-                  onChange={this.props.handlePINChange}
-                  value={this.props.pin}
-                />
+                <p>phone&nbsp; &nbsp; 
+                  <input
+                    autoFocus
+                    type="text"
+                    onChange={this.props.handleUsernameChange}
+                    value={this.props.phone}
+                  />
+                </p>
+                <p>pin&nbsp; &nbsp; 
+                  <input
+                    type="text"
+                    onChange={this.props.handlePINChange}
+                    value={this.props.pin}
+                  />
+                </p>
                 <input
                   type="submit"
                   value="Let's Go!"

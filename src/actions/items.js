@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export function itemsHasErrored(bool) {
     return {
         type: 'ITEMS_HAS_ERRORED',
@@ -64,19 +66,14 @@ export function putData(url, newItem) {
 
 
 
+// post to https://healthnotes.herokuapp.com/2/login/9177043031/8523
 export function sendPIN(PIN, phoneNo) {
-    return (dispatch) => {        
-        var url = 'https://healthnotes.herokuapp.com/2/login/'+  phoneNo +'/'+ PIN
-        console.log(url)
-        // AsyncStorage.setItem('jwt', 'token' ); resolve() // UNCOMMENT FOR OFFLINE MODE 
-        fetch(url, { 
-            method: 'POST'
-            }
-          )
+    return dispatch => new Promise((resolve, reject) => {        
+        console.log('https://healthnotes.herokuapp.com/2/login/'+ phoneNo +'/'+ PIN)
+        axios.post('https://healthnotes.herokuapp.com/2/login/'+  phoneNo +'/'+ PIN)
             .then((response) => {
-                    console.log(response)
-                    if (response.data === false){ return false}
-                    else { return true }
-                })      
-    }
+                    if (response.data === 'false'){ resolve(false)}
+                    else { resolve(true) }
+                })
+    })
 }

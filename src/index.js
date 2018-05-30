@@ -53,7 +53,9 @@ export default class App extends Component{
                 handleUsernameChange={this.handleUsernameChange} 
                 handlePINChange={this.handlePINChange} 
                 handleSubmit={this.handleSubmit}
-                component={LoginComponent} /> 
+                component={LoginComponent}
+                phone={this.state.phone}
+                pin={this.state.pin} /> 
         }
             
       </div>

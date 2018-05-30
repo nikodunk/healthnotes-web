@@ -6,7 +6,7 @@ import { fetchData } from '../actions/items';
 class ItemList extends Component {
     
     componentDidMount() {
-        this.props.fetchData('https://healthnotes.herokuapp.com/1/getnotes/9177043031');
+        this.props.fetchData('https://healthnotes.herokuapp.com/1/getnotes/8019133392');
 
     }
 

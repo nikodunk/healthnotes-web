@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchData } from '../actions/items';
+import { fetchData, sendPIN } from '../actions/items';
 
 
 class ItemList extends Component {
     
     componentDidMount() {
-        this.props.fetchData('https://healthnotes.herokuapp.com/1/getnotes/8019133392');
+        this.props.fetchData('https://healthnotes.herokuapp.com/1/getnotes/' + this.props.phone);
 
     }
 
@@ -18,7 +18,13 @@ class ItemList extends Component {
             <ul>
                 {this.props.items.notes ? 
                         Object.keys(this.props.items.notes).map((id) =>
-                            <p>{this.props.items.notes[id][0]["name"]} – {this.props.items.notes[id][1]["note"]} </p>
+                            <div>
+                                <p>Slot {parseInt(id)+1}</p>
+                                <textarea
+                                    style={{height: '300px', width: '90%', margin: '10px'}}
+                                    value={this.props.items.notes[id][1]["note"]} />
+                                <hr />
+                            </div>
                         )
                 : null}
             </ul>
@@ -38,7 +44,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(fetchData(url))
+        fetchData: (url) => dispatch(fetchData(url)),
+        sendPIN: (PIN, phone) => dispatch(sendPIN(PIN, phone))
     };
 };
 

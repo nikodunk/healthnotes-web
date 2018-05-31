@@ -11,19 +11,17 @@ class ItemList extends Component {
     }
 
     render() {
-        
         return (
-
-        <div>
+        <div style={{margin: 'auto', maxWidth: 800}}>
             <ul>
                 {this.props.items.notes ? 
                         Object.keys(this.props.items.notes).map((id) =>
                             <div>
-                                <p>Slot {parseInt(id)+1}</p>
+                                <p>Slot {parseInt(id, 10)+1}</p>
                                 <textarea
-                                    style={{height: '300px', width: '90%', margin: '10px'}}
+                                    style={{height: '300px', width: '90%'}}
                                     value={this.props.items.notes[id][1]["note"]} />
-                                <hr />
+                                <br /><br /><br />
                             </div>
                         )
                 : null}

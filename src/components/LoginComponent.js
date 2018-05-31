@@ -27,9 +27,9 @@ class LoginComponent extends Component {
         
         return (
 
-        <div>
+        <div style={{margin: 'auto', maxWidth: 800, textAlign: 'center'}}>
             <form>
-                <p>phone&nbsp; &nbsp; 
+                <p>phone&nbsp;&nbsp;
                   <input
                     autoFocus
                     type="text"
@@ -37,7 +37,7 @@ class LoginComponent extends Component {
                     value={this.props.phone}
                   />
                 </p>
-                <p>pin&nbsp; &nbsp; 
+                <p>pin&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <input
                     type="text"
                     onChange={this.props.handlePINChange}

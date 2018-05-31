@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { render } from 'react-dom';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 
 import ItemList from './components/ItemList';
@@ -8,7 +8,6 @@ import LoginComponent from './components/LoginComponent';
 // import { Switch } from 'react-router'
  import { Router} from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
-import { fetchData, sendPIN } from '../src/actions/items';
 
 const history = createHistory()
 const store = configureStore();
@@ -43,11 +42,13 @@ export default class App extends Component{
   render() {
     return (
       <div>
-        <h1>Simple Soap</h1>
-        {this.state.loggedIn ? 
+        <div style={{margin: 'auto', maxWidth: 800, textAlign: 'center'}}>
+          <h1>simple soap</h1>
+        </div>
+        { this.state.loggedIn ? 
           <ItemList 
             phone={this.state.phone} /> : null }
-        {this.state.loggedIn ? 
+        { this.state.loggedIn ? 
           null :
           <LoginComponent
                 handleUsernameChange={this.handleUsernameChange} 

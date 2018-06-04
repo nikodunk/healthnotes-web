@@ -43,7 +43,7 @@ export default class App extends Component{
     return (
       <div>
         <div style={{margin: 'auto', maxWidth: 800, textAlign: 'center'}}>
-          <h1>simple soap</h1>
+          <h1>soap dictate</h1>
         </div>
         { this.state.loggedIn ? 
           <ItemList 

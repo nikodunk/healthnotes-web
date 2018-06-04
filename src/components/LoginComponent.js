@@ -19,7 +19,7 @@ class LoginComponent extends Component {
       this.props.sendPIN(this.props.pin, this.props.phone)
         .then((res) => {
           if (res === true){ console.log('password correct'); this.props.handleSubmit(e) }
-          else{console.log('password wrong')}
+          else{ console.log('password wrong' )}
         })
     }
 

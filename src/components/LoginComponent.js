@@ -48,14 +48,21 @@ class LoginComponent extends Component {
                     value={this.props.pin}
                   />
                 </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>
                   <input
-                    style={{ fontSize: 20, width: 150, justifyContent: 'right'}}
+                    style={{ 
+                      fontSize: 20, 
+                      backgroundColor: '#0196FD', 
+                      padding: '10px', 
+                      textDecoration: 'none', 
+                      color: 'white', 
+                      borderRadius: 7, 
+                      margin: 10}}
                     type="submit"
-                    value="Let's Go!"
+                    value="View Notes"
                     onClick={this.check} />
                 </p>
-                {this.state.passwordFalse ? <p style={{color: 'red'}}>Password wrong</p> : null }
+                {this.state.passwordFalse ? <p style={{color: 'red'}}>Login or password wrong</p> : null }
             </form>
         </div>
         );

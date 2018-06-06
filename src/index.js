@@ -64,7 +64,7 @@ export default class App extends Component{
                       pin={this.state.pin} />
               </div>
               <div style={{display: 'flex', flexDirection: 'column', margin: 20}}>
-                  <img src={demo} style={{height: 600}} alt={'demo'} />
+                  <img src={demo} style={{height: 600, borderRadius: 40}} alt={'demo'} />
                   <a style={{ 
                       fontSize: 20, 
                       backgroundColor: '#0196FD', 

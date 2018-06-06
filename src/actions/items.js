@@ -72,7 +72,7 @@ export function sendPIN(PIN, phoneNo) {
         console.log('https://healthnotes.herokuapp.com/2/login/'+ phoneNo +'/'+ PIN)
         axios.post('https://healthnotes.herokuapp.com/2/login/'+  phoneNo +'/'+ PIN)
             .then((response) => {
-                    if (response.data == false){ resolve(false)}
+                    if (response.data === false){ resolve(false)}
                     else { resolve(true) }
                 })
     })

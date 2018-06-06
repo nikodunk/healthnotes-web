@@ -19,7 +19,7 @@ class ItemList extends Component {
                             <div>
                                 <p>Slot {parseInt(id, 10)+1}</p>
                                 <textarea
-                                    style={{height: '300px', width: '90%'}}
+                                    style={{height: '300px', width: '90%', borderRadius: 5, border: '1px solid grey', padding: 5}}
                                     value={this.props.items.notes[id][1]["note"]} />
                                 <br /><br /><br />
                             </div>

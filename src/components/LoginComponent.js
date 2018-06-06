@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendPIN } from '../actions/items';
 
-
 class LoginComponent extends Component {
     
     constructor(props) {
     super(props);
     this.check = this.check.bind(this);
+    this.state = {
+        passwordFalse: false
+    }
   }
   
     componentDidMount() {
@@ -18,8 +20,8 @@ class LoginComponent extends Component {
       e.preventDefault();
       this.props.sendPIN(this.props.pin, this.props.phone)
         .then((res) => {
-          if (res == true){ console.log('password correct'); this.props.handleSubmit(e) }
-          else{ console.log('password wrong' )}
+          if (res === true){ this.setState({passwordFalse: false}); console.log('password correct'); this.props.handleSubmit(e) }
+          else{ this.setState({passwordFalse: true}); console.log('password wrong' )}
         })
     }
 
@@ -27,27 +29,33 @@ class LoginComponent extends Component {
         
         return (
 
-        <div style={{margin: 'auto', maxWidth: 800, textAlign: 'center'}}>
+        <div>
             <form>
-                <p>phone&nbsp;&nbsp;
+                <p>Phone&nbsp;&nbsp;
                   <input
+                    style={{borderRadius: 5, border: '1px solid grey', padding: 5}}
                     autoFocus
                     type="text"
                     onChange={this.props.handleUsernameChange}
                     value={this.props.phone}
                   />
                 </p>
-                <p>pin&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>PIN&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <input
+                    style={{borderRadius: 5, border: '1px solid grey', padding: 5}}
                     type="text"
                     onChange={this.props.handlePINChange}
                     value={this.props.pin}
                   />
                 </p>
-                <input
-                  type="submit"
-                  value="Let's Go!"
-                  onClick={this.check} />
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input
+                    style={{ fontSize: 20, width: 150, justifyContent: 'right'}}
+                    type="submit"
+                    value="Let's Go!"
+                    onClick={this.check} />
+                </p>
+                {this.state.passwordFalse ? <p style={{color: 'red'}}>Password wrong</p> : null }
             </form>
         </div>
         );

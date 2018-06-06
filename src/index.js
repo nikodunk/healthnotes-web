@@ -8,6 +8,7 @@ import LoginComponent from './components/LoginComponent';
 // import { Switch } from 'react-router'
  import { Router} from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
+import logo from './assets/logo.png'
 
 const history = createHistory()
 const store = configureStore();
@@ -41,8 +42,9 @@ export default class App extends Component{
 
   render() {
     return (
-      <div>
-        <div style={{margin: 'auto', maxWidth: 800, textAlign: 'center'}}>
+      <div style={{margin: 'auto', marginTop: '10%', maxWidth: 800, textAlign: 'center', justifyContent: 'middle'}}>
+        <div >
+          <img src={logo} style={{height: 100}} alt={'icon'} />
           <h1>soap dictate</h1>
         </div>
         { this.state.loggedIn ? 

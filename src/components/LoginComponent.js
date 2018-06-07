@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendPIN } from '../actions/items';
+import logo from '../assets/logo.png'
 
 class LoginComponent extends Component {
     
@@ -29,7 +30,12 @@ class LoginComponent extends Component {
         
         return (
 
-        <div>
+        <div style={{maxWidth: 200}}>
+            <div>
+                      <img src={logo} style={{height: 100}} alt={'icon'} />
+                      <h1>soap dictate</h1>
+            </div>
+            <p style={{color: 'grey'}}>If you have an account, please login below.</p>
             <form>
                 <p>Phone&nbsp;&nbsp;
                   <input
@@ -54,12 +60,15 @@ class LoginComponent extends Component {
                       fontSize: 20, 
                       backgroundColor: '#0196FD', 
                       padding: '10px', 
+                      paddingLeft: '50px',
+                      paddingRight: '50px',
                       textDecoration: 'none', 
                       color: 'white', 
                       borderRadius: 7, 
-                      margin: 10}}
+                      margin: 10,
+                      border: 'none'}}
                     type="submit"
-                    value="View Notes"
+                    value="Login"
                     onClick={this.check} />
                 </p>
                 {this.state.passwordFalse ? <p style={{color: 'red'}}>Login or password wrong</p> : null }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendPIN } from '../actions/items';
-import logo from '../assets/logo.png'
+
 
 class LoginComponent extends Component {
     
@@ -29,51 +29,52 @@ class LoginComponent extends Component {
     render() {
         
         return (
-
-        <div style={{maxWidth: 200}}>
-            <div>
-                      <img src={logo} style={{height: 100}} alt={'icon'} />
-                      <h1>soap dictate</h1>
-            </div>
-            <p style={{color: 'grey'}}>If you have an account, please login below.</p>
             <form>
-                <p>Phone&nbsp;&nbsp;
+                <p style={{color: 'grey'}}>Already have an account?&nbsp;&nbsp;&nbsp;
                   <input
-                    style={{borderRadius: 5, border: '1px solid grey', padding: 5}}
+                    style={{
+                      borderRadius: 5, 
+                      border: '1px solid grey', 
+                      padding: '10px'
+                    }}
                     autoFocus
                     type="text"
                     onChange={this.props.handleUsernameChange}
                     value={this.props.phone}
-                  />
-                </p>
-                <p>PIN&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    placeholder="Phone"
+                  />&nbsp;&nbsp;
                   <input
-                    style={{borderRadius: 5, border: '1px solid grey', padding: 5}}
+                    style={{
+                      borderRadius: 5, 
+                      border: '1px solid grey', 
+                      padding: '10px'
+                    }}
                     type="text"
                     onChange={this.props.handlePINChange}
                     value={this.props.pin}
+                    placeholder="PIN"
                   />
-                </p>
-                <p>
                   <input
                     style={{ 
-                      fontSize: 20, 
                       backgroundColor: '#0196FD', 
-                      padding: '10px', 
-                      paddingLeft: '50px',
-                      paddingRight: '50px',
+                      padding: 8,
+                      paddingLeft: 20,
+                      paddingRight: 20,
+                      fontSize: 15,
+                      fontWeight: 900,
                       textDecoration: 'none', 
                       color: 'white', 
+                      cursor: 'pointer',
                       borderRadius: 7, 
                       margin: 10,
-                      border: 'none'}}
+                      border: 'none'
+                    }}
                     type="submit"
                     value="Login"
                     onClick={this.check} />
                 </p>
                 {this.state.passwordFalse ? <p style={{color: 'red'}}>Login or password wrong</p> : null }
             </form>
-        </div>
         );
     }
 }

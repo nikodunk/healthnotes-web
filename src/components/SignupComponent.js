@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import demo from '../assets/demo.gif'
+import logo from '../assets/logo.png'
 
 class SignupComponent extends Component {
     
@@ -21,9 +21,12 @@ class SignupComponent extends Component {
         
         return (
 
-        <div style={{}}>
-                  <img src={demo} style={{height: 600, borderRadius: 40}} alt={'demo'} />
-                  <h2>Hate charting?</h2>
+        <div style={{margin: 'auto', marginBottom: 50}}>
+                  <div>
+                      <img src={logo} style={{height: 100}} alt={'icon'} />
+                      <h3 style={{margin: 0}} >soap dictate</h3>
+                  </div>
+                  <h1>Hate charting?</h1>
                   <p style={{color: 'grey'}}>
                     Sign up for the private beta now.<br/><br/>
                   </p>

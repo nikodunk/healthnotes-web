@@ -1,6 +1,7 @@
 {
   "name": "healthnotes-web",
-  "homepage": "http://soapdictate.com",
+  "homepage": "http://nikodunk.github.io/healthnotes-web",
+  
   "version": "1.0.0",
   "private": true,
   "dependencies": {

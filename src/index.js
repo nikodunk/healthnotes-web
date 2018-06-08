@@ -43,30 +43,31 @@ export default class App extends Component{
 
   render() {
     return (
-      <div style={{margin: 'auto', width: '100%', maxWidth: 800, marginTop: 100, textAlign: 'center', justifyContent: 'center'}}>
+      <div style={{ width: '100%', textAlign: 'center', justifyContent: 'center'}}>
           { this.state.loggedIn ? 
             <ItemList 
               phone={this.state.phone} /> : null }
           { this.state.loggedIn ? 
             null :
           <div>
-            <div style={{position: 'absolute', top: 0, right: 0}}>
+            <div style={{ borderBottom: '1px solid lightgrey', marginBottom: 80}}>
               <LoginComponent
-                      handleUsernameChange={this.handleUsernameChange} 
-                      handlePINChange={this.handlePINChange} 
-                      handleSubmit={this.handleSubmit}
-                      component={LoginComponent}
-                      phone={this.state.phone}
-                      pin={this.state.pin} />
+                  handleUsernameChange={this.handleUsernameChange} 
+                  handlePINChange={this.handlePINChange} 
+                  handleSubmit={this.handleSubmit}
+                  component={LoginComponent}
+                  phone={this.state.phone}
+                  pin={this.state.pin} />
             </div>
-            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}} >
-              <div style={{paddingTop: '20%', paddingLeft: '10%', paddingRight: '10%' }}>
+            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}} >
+              <div style={{paddingTop: 120, padding: '10%' }}>
                   <SignupComponent />
               </div>
-              <div style={{display: 'flex', flexDirection: 'column', margin: 20}}>
-                  <img src={demo} style={{height: 600, borderRadius: 40}} alt={'demo'} />
+              <div style={{display: 'flex', flexDirection: 'column'}}>
+                  <img src={demo} style={{height: 600, borderRadius: 40,}} alt={'demo'} />
               </div> 
             </div>
+            
           </div>
           }
             

@@ -29,50 +29,49 @@ class LoginComponent extends Component {
     render() {
         
         return (
-            <form>
-                <p style={{color: 'grey'}}>Already have an account?&nbsp;&nbsp;&nbsp;
-                  <input
-                    style={{
-                      borderRadius: 5, 
-                      border: '1px solid grey', 
-                      padding: '10px'
-                    }}
-                    autoFocus
-                    type="text"
-                    onChange={this.props.handleUsernameChange}
-                    value={this.props.phone}
-                    placeholder="Phone"
-                  />&nbsp;&nbsp;
-                  <input
-                    style={{
-                      borderRadius: 5, 
-                      border: '1px solid grey', 
-                      padding: '10px'
-                    }}
-                    type="text"
-                    onChange={this.props.handlePINChange}
-                    value={this.props.pin}
-                    placeholder="PIN"
-                  />
-                  <input
-                    style={{ 
-                      backgroundColor: '#0196FD', 
-                      padding: 8,
-                      paddingLeft: 20,
-                      paddingRight: 20,
-                      fontSize: 15,
-                      fontWeight: 900,
-                      textDecoration: 'none', 
-                      color: 'white', 
-                      cursor: 'pointer',
-                      borderRadius: 7, 
-                      margin: 10,
-                      border: 'none'
-                    }}
-                    type="submit"
-                    value="Login"
-                    onClick={this.check} />
-                </p>
+            <form style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+                <p style={{color: 'grey'}}>Already have an account?&nbsp;&nbsp;&nbsp;</p>
+                <input
+                  style={{
+                    borderRadius: 5, 
+                    border: '1px solid grey', 
+                    padding: '10px'
+                  }}
+                  autoFocus
+                  type="text"
+                  onChange={this.props.handleUsernameChange}
+                  value={this.props.phone}
+                  placeholder="Phone"
+                />
+                <input
+                  style={{
+                    borderRadius: 5, 
+                    border: '1px solid grey', 
+                    padding: '10px'
+                  }}
+                  type="text"
+                  onChange={this.props.handlePINChange}
+                  value={this.props.pin}
+                  placeholder="PIN"
+                />
+                <input
+                  style={{ 
+                    backgroundColor: 'lightgreen', 
+                    padding: 8,
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    fontSize: 15,
+                    fontWeight: 900,
+                    textDecoration: 'none', 
+                    color: 'white', 
+                    cursor: 'pointer',
+                    borderRadius: 7, 
+                    margin: 10,
+                    border: 'none'
+                  }}
+                  type="submit"
+                  value="Login"
+                  onClick={this.check} />
                 {this.state.passwordFalse ? <p style={{color: 'red'}}>Login or password wrong</p> : null }
             </form>
         );

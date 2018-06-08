@@ -1,7 +1,6 @@
 {
   "name": "healthnotes-web",
   "homepage": "http://nikodunk.github.io/healthnotes-web",
-  
   "version": "1.0.0",
   "private": true,
   "dependencies": {

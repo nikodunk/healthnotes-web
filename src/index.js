@@ -43,7 +43,7 @@ export default class App extends Component{
 
   render() {
     return (
-      <div style={{ width: '100%', textAlign: 'center', justifyContent: 'center'}}>
+      <div style={{  textAlign: 'center', justifyContent: 'center', width: '100%'}}>
           { this.state.loggedIn ? 
             <ItemList 
               phone={this.state.phone} /> : null }
@@ -59,12 +59,16 @@ export default class App extends Component{
                   phone={this.state.phone}
                   pin={this.state.pin} />
             </div>
-            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}} >
-              <div style={{paddingTop: 120, padding: '10%' }}>
+            <div style={{
+                  display: 'flex', 
+                  flexDirection: 'row', 
+                  flexWrap: 'wrap', 
+                  justifyContent: 'center'}} >
+              <div style={{ maxWidth: 300, margin: 30, marginBottom: 50 }}>
                   <SignupComponent />
               </div>
               <div style={{display: 'flex', flexDirection: 'column'}}>
-                  <img src={demo} style={{height: 600, borderRadius: 40,}} alt={'demo'} />
+                  <img src={demo} style={{height: 600, borderRadius: 40, boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.6)'}} alt={'demo'} />
               </div> 
             </div>
             

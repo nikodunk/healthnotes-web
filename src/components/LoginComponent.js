@@ -35,7 +35,9 @@ class LoginComponent extends Component {
                   style={{
                     borderRadius: 5, 
                     border: '1px solid grey', 
-                    padding: '10px'
+                    padding: '10px',
+                    margin: 5,
+                    width: 180
                   }}
                   autoFocus
                   type="text"
@@ -47,7 +49,9 @@ class LoginComponent extends Component {
                   style={{
                     borderRadius: 5, 
                     border: '1px solid grey', 
-                    padding: '10px'
+                    padding: '10px',
+                    margin: 5,
+                    width: 180
                   }}
                   type="text"
                   onChange={this.props.handlePINChange}
@@ -67,7 +71,9 @@ class LoginComponent extends Component {
                     cursor: 'pointer',
                     borderRadius: 7, 
                     margin: 10,
-                    border: 'none'
+                    border: 'none',
+                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+                    width: 180
                   }}
                   type="submit"
                   value="Login"

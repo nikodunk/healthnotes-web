@@ -28,7 +28,14 @@ class SignupComponent extends Component {
                   </div>
                   <h1>Hate charting?</h1>
                   <p style={{color: 'grey'}}>
-                    Sign up for the private beta now.<br/><br/>
+                    Sign up for the private beta now.
+                    <br/>
+                    <ul style={{textAlign: 'left'}}>
+                      <li>Dictate your notes</li>
+                      <li>Copy into your EMR/EHR system</li>
+                      <li>TouchID & AES-256-bit Secured</li>
+                    </ul>
+                    <br/>
                   </p>
                   <a style={{ 
                       fontSize: 20, 
@@ -39,7 +46,8 @@ class SignupComponent extends Component {
                       textDecoration: 'none', 
                       color: 'white', 
                       borderRadius: 7, 
-                      margin: 5}} 
+                      margin: 5,
+                      boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'}} 
                       href='https://docs.google.com/forms/d/e/1FAIpQLSde8rRykYscLRUQp1g91YtpTExYLbKr9B1mShJ10RF7qFaSYg/viewform?usp=sf_link'>
                     Sign up now
                   </a>

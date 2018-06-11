@@ -20,7 +20,7 @@ class ItemList extends Component {
                                 <p>Slot {parseInt(id, 10)+1}</p>
                                 <textarea
                                     style={{height: '300px', width: '90%', borderRadius: 5, border: '1px solid grey', padding: 5}}
-                                    value={this.props.items.notes[id][1]["note"]} />
+                                    value={this.props.items.notes[id][1]["note"].replace(/#/g, "\n\n\n\n")} />
                                 <br /><br /><br />
                             </div>
                         )

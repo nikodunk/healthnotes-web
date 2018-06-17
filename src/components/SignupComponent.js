@@ -27,6 +27,7 @@ class SignupComponent extends Component {
                       <h3 style={{margin: 0}} >soap dictate</h3>
                   </div>
                   <h1>Hate charting?</h1>
+                  <h2>Had enough of typing your entire note? Why not take advantage of your walking time on rounds to get a jump on charting</h2>
                   <p style={{color: 'grey'}}>
                     Sign up for the private beta now.
                     <br/>
